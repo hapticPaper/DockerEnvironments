@@ -1,0 +1,30 @@
+version: '3.7'
+
+
+services:
+  ml-jupyter:
+    build: './'
+    container_name: jupyter-tensorflow
+    volumes:
+      - ./notebook-storage:/app/notebooks:consistent
+    
+    expose:
+      - '8888'
+      - '8889'
+      - '8890'
+      - '8891'
+      - '8892'
+      - '8893'
+      - '6006'
+    ports: 
+      - '6006:6006'
+      - '8888:8888'
+      - '8889:8889'
+      - '8890:8890'
+      - '8891:8891'
+      - '8892:8892'
+      - '8893:8893'
+
+volumes:
+  notebook-storage:
+      
