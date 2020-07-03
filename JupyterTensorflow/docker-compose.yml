@@ -1,0 +1,36 @@
+version: '3.7'
+
+
+services:
+  ml-jupyter:
+    image: jupyter/tensorflow-notebook
+    container_name: jupyter-tensorflow
+    volumes: 
+      - ./notebook-storage:/home/jovyan/work:consistent
+    expose:
+        - '8888'
+        - '8889'
+        - '8890'
+        - '8891'
+        - '8892'
+        - '6006'
+        - '6007'
+        - '6008'
+        - '6009'
+        - '6010'
+    ports: 
+        - '6007:6007'
+        - '6008:6008'
+        - '6009:6009'
+        - '6006:6006'
+        - '6010:6010'
+        - '8888:8888'
+        - '8889:8889'
+        - '8890:8890'
+        - '8891:8891'
+        - '8892:8892'
+  
+volumes:
+    notebook-storage:
+        
+  
